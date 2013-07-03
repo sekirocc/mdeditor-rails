@@ -103,8 +103,8 @@ new function($) {
     $('#wmd-bold-button > span').addClass('icon-bold muted');
     $('#wmd-italic-button > span').addClass('icon-italic muted');
     $('#wmd-link-button > span').addClass('icon-link muted');
-    $('#wmd-quote-button > span').addClass('icon-quote-left muted');
-    $('#wmd-code-button > span').addClass('icon-code muted');
+    // $('#wmd-quote-button > span').addClass('icon-quote-left muted');
+    // $('#wmd-code-button > span').addClass('icon-code muted');
     $('#wmd-image-button > span').addClass('icon-picture muted');
     $('#wmd-olist-button > span').addClass('icon-list-ol muted');
     $('#wmd-ulist-button > span').addClass('icon-list-ul muted');
@@ -156,8 +156,8 @@ new function($) {
 
     // enlarge the icon when hovering.
     $('.wmd-button > span').hover(function() {
-        $(this).addClass('icon-large');
+        $(this).addClass('larger-icon');
     }, function() {
-        $(this).removeClass('icon-large');
+        $(this).removeClass('larger-icon');
     });
 })();

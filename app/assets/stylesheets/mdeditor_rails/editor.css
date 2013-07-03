@@ -232,3 +232,6 @@ li code {
     display: none;
     padding: 10px;
 }
+.larger-icon {
+    font-size: 1.5em;
+}
