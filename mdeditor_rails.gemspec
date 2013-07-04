@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = MdeditorRails::VERSION
   s.authors     = ["NickelChen"]
   s.email       = ["nickelchen0101@gmail.com"]
-  s.homepage    = "TODO"
+  s.homepage    = "https://github.com/nickelchen/mdeditor_rails"
   s.summary     = "Another markdown editor gem for rails 3"
   s.description = "Simple markdown editor with font-awsome toolbar"
 
@@ -20,5 +20,4 @@ Gem::Specification.new do |s|
   s.add_dependency "jquery-rails"
   s.add_dependency "twitter-bootstrap-rails", "~> 2.1.9"
 
-  s.add_development_dependency "sqlite3"
 end
