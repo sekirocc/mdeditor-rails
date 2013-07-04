@@ -11,26 +11,11 @@ module MdeditorRails
         js_content_for_section = options.delete(:js_content_for)
         
         output_buffer = ActiveSupport::SafeBuffer.new
-
-        editor_div = content_tag(:div, 
-          content_tag(:div, 
-            content_tag(:div, '', :id => 'wmd-button-bar') +
-            content_tag(:div, 
-              text_area_tag(name, content, input_html), 
-              :class => 'wmd-panel wmd-panel-for-input') + 
-            content_tag(:div, 
-              content_tag(:div, '', :id => 'wmd-preview'), 
-              :class => 'wmd-panel '), 
-            :class => 'wmd-wrapper'),
-          :class => 'editor')
-
-        output_buffer << editor_div
-
-        
-        # js = Utils.js_replace(element_id, options)
-        
-        # output_buffer << (js_content_for_section ? content_for(js_content_for_section, js) : javascript_tag(js))
+        output_buffer << Util.html_tag(self) { text_area_tag(name, content, input_html) }
+        js = Util.js_code
+        output_buffer << (js_content_for_section ? content_for(js_content_for_section, javascript_tag(js)) : javascript_tag(js))
         output_buffer
+
       end
     end
   end

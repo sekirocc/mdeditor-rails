@@ -20,3 +20,5 @@
 //= require underscore.js
 //= require css_browser_selector.js
 //= require jquery.waitforimages.js
+
+//= require_tree .

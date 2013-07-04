@@ -218,6 +218,7 @@ li code {
 
 .wmd-wrapper {
     position: relative;
+    overflow-x: hidden;
 }
 .wmd-toggle-preview {
     position:absolute; 
@@ -234,4 +235,8 @@ li code {
 }
 .larger-icon {
     font-size: 1.5em;
+}
+.wmd-wrapper .switch label {
+    float: none;
+    margin: 0;
 }

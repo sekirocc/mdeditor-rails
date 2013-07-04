@@ -11,5 +11,5 @@
  *= require_self
  *= require google-code-prettify/prettify.css
  *= require bootstrap-switch/static/stylesheets/bootstrapSwitch
- *= require mdeditor_rails/editor.css
+ *= require_tree .
  */

@@ -18,6 +18,30 @@ module MdeditorRails
       #   js.html_safe
       # end
 
+      def html_tag(view_helper, &block)
+        h = view_helper.content_tag(:div, 
+          view_helper.content_tag(:div, 
+            view_helper.content_tag(:div, '', :id => 'wmd-button-bar') +
+            view_helper.content_tag(:div, yield , :class => 'wmd-panel wmd-panel-for-input') + 
+            view_helper.content_tag(:div, 
+              view_helper.content_tag(:div, '', :id => 'wmd-preview'), 
+              :class => 'wmd-panel '), 
+            :class => 'wmd-wrapper'),
+          :class => 'editor')
+
+        h.html_safe
+      end
+
+      def js_code
+        js = <<-JS
+          $(function() {
+            MdeditorRails.startEdit()
+            $(".switch").not(".has-switch")["bootstrapSwitch"]()
+          })
+        JS
+        js.html_safe
+      end
+
       def precompile_assets
         assets = []
 

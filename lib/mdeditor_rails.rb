@@ -4,6 +4,8 @@ module MdeditorRails
   autoload :Util, 'mdeditor_rails/util'
   module Helpers
     autoload :ViewHelper, 'mdeditor_rails/helpers/view_helper'
+    autoload :FormHelper, 'mdeditor_rails/helpers/form_helper'
+    autoload :FormBuilder, 'mdeditor_rails/helpers/form_builder'
   end
 
   class<< self

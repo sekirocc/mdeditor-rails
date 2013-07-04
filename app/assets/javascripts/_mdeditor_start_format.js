@@ -1,11 +1,10 @@
 (function () {
     var converter = new Markdown.Converter()
-    var enki_formatter
-    var EnkiFormatter = function () {
+    var Formatter = function () {
       Markdown.Extra.init(converter, {extensions: ["tables", "fenced_code_gfm", "def_list"], highlighter: "prettify"});
     }
 
-    EnkiFormatter.prototype.format = function(scope, target, text) {
+    Formatter.prototype.format = function(scope, target, text) {
       target.html(converter.makeHtml(text));
       scope.find('.prettyprint').each(function(){
         $(this).addClass('linenums');
@@ -16,11 +15,12 @@
       });
     };
 
-    Markdown.EnkiFormatter = function() {
-      if ( !enki_formatter ) {
-        enki_formatter = new EnkiFormatter()
-      }
-      return enki_formatter;
+    var fmtter
+    var getFormatter = function() {
+      if ( !fmtter ) fmtter = new Formatter()
+      return fmtter;
     }
-
+    MdeditorRails.start_format = function (scope, target, text) {
+      getFormatter().format(scope, target, text)
+    }
 }())

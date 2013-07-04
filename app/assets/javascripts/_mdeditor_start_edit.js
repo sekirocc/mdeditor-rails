@@ -1,4 +1,4 @@
-new function($) {
+(function($) {
   $.fn.autogrow = function(callback) {
    $(this).each(function() {
       var t = $(this), origHeight = t.height();
@@ -14,9 +14,10 @@ new function($) {
       setHeight.apply(this)
    })
  }
-}(jQuery);
+}(jQuery));
 
-(function () {
+var MdeditorRails = MdeditorRails || {};
+MdeditorRails.startEdit = function () {
 
     var sanConverter = Markdown.getSanitizingConverter();
     // tell the converter to use Markdown Extra for tables, fenced_code_gfm, def_list
@@ -160,4 +161,4 @@ new function($) {
     }, function() {
         $(this).removeClass('larger-icon');
     });
-})();
+}
