@@ -14,10 +14,10 @@ Use the following libraries:
 
 
 ## Usage
- 1. user with simple_form
+ 1. use with simple_form
      
   ```
-= f.input :content, as: :mdtext_area, input_html: { :rows => 10 }
+= f.input :content, as: :mdtext_area, input_html: { rows: 10 }
   ```
  2. view helper
 
