@@ -14,4 +14,18 @@ Use the following libraries:
 
 
 #### Usage
-    #TODO
+ 1. user with simple_form
+     
+  ```
+= f.input :content, as: :mdtext_area, input_html: { :rows => 10 }
+  ```
+ 2. view helper
+
+  ```
+= mdtext_area_tag :content, '' , rows: 10
+  ```
+ 3. form builder
+
+  ```
+= f.mdtext_area :content, rows: 10
+  ```

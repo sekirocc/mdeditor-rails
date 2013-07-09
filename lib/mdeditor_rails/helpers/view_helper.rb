@@ -7,7 +7,7 @@ module MdeditorRails
         element_id = 'wmd-input'
         element_class = 'wmd-input'
         options = { :language => I18n.locale.to_s }.merge(options)
-        input_html = ( options.delete(:input_html) || {} ).merge({ :id => element_id, :class => element_class })
+        input_html = options.merge({ :id => element_id, :class => element_class })
         js_content_for_section = options.delete(:js_content_for)
         
         output_buffer = ActiveSupport::SafeBuffer.new

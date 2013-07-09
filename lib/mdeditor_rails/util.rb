@@ -7,17 +7,6 @@ module MdeditorRails
       ASSET_FORMAT = '*.{coffee,scss,sass,png,jpeg,jpg,gif,js,css,erb}'
       NEED_TO_COMPILE_STYLESHEET_EXT = %w(.scss .sass .coffee .erb)
 
-      # def js_replace(dom_id, options = nil)
-      #   js_options = (options && !options.keys.empty?)? ActiveSupport::JSON.encode(options) : '{}'
-      #   js = <<-JS
-      #     if(window.UEDITOR_FIELDS === undefined) {
-      #       window.UEDITOR_FIELDS = [];
-      #     }
-      #     window.UEDITOR_FIELDS.push({id: '#{dom_id}', opt: #{js_options}})
-      #   JS
-      #   js.html_safe
-      # end
-
       def html_tag(view_helper, &block)
         h = view_helper.content_tag(:div, 
           view_helper.content_tag(:div, 

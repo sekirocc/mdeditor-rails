@@ -12,8 +12,8 @@ module MdeditorRails
 
         element_id = 'wmd-input'
         element_class = 'wmd-input'
-        attributes = {:type => 'text/plain', :id => element_id, :name => options.delete('name'), :class => element_class }
-
+        attributes = options.merge({:type => 'text/plain', :id => element_id, :name => options.delete('name'), :class => element_class })
+        
         output_buffer = ActiveSupport::SafeBuffer.new
         output_buffer << Util.html_tag(self) { instance_tag.to_text_area_tag(attributes) }
         output_buffer << javascript_tag(Util.js_code)
