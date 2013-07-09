@@ -1,4 +1,4 @@
-#### Another Markdown editor gem for rails 3. 
+## Another Markdown editor gem for rails 3. 
 
 ![Edit](http://pic.yupoo.com/nickelchen/CZ6aVUgw/csiy1.png)
 ![Preview](http://pic.yupoo.com/nickelchen/CZ6aXPaT/uMQxx.png)
@@ -13,7 +13,7 @@ Use the following libraries:
 
 
 
-#### Usage
+## Usage
  1. user with simple_form
      
   ```
@@ -29,3 +29,34 @@ Use the following libraries:
   ```
 = f.mdtext_area :content, rows: 10
   ```
+
+## Start from a sample
+
+ rails new myapp, cd myapp
+
+ add dependencies to Gemfile
+
+    gem 'mdeditor_rails', path: '/Users/nickelchen/work/workspaces/my_gems/mdeditor_rails'
+    gem 'twitter-bootstrap-rails', '2.1.9'
+
+ bundle install
+
+ install bootstrap
+
+    rails generate bootstrap:install static
+
+ install mdeditor_rails, add this to application.js
+
+    //= require 'mdeditor_rails'
+
+ add this to application.css ( you know the meaning of this code )
+
+     *= require mdeditor_rails
+
+ generate a scaffold
+
+    rails g scaffold Post title:string content:text
+
+ modify posts/_form.html.erb from `f.text_area` to `f.mdtext_area`
+
+ there you go
