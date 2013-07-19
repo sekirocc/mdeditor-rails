@@ -4,13 +4,13 @@
       Markdown.Extra.init(converter, {extensions: ["tables", "fenced_code_gfm", "def_list"], highlighter: "prettify"});
     }
 
-    Formatter.prototype.format = function(scope, target, text) {
+    Formatter.prototype.format = function(target, text) {
       target.html(converter.makeHtml(text));
-      scope.find('.prettyprint').each(function(){
+      target.find('.prettyprint').each(function(){
         $(this).addClass('linenums');
       });
       prettyPrint();
-      scope.find('table').each(function() {
+      target.find('table').each(function() {
         $(this).addClass('table table-striped table-bordered');
       });
     };
@@ -20,7 +20,7 @@
       if ( !fmtter ) fmtter = new Formatter()
       return fmtter;
     }
-    MdeditorRails.start_format = function (scope, target, text) {
-      getFormatter().format(scope, target, text)
+    MdeditorRails.start_format = function (target, text) {
+      getFormatter().format(target, text)
     }
 }())

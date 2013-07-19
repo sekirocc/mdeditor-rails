@@ -60,3 +60,12 @@ Use the following libraries:
  modify posts/_form.html.erb from `f.text_area` to `f.mdtext_area`
 
  there you go
+
+## Format your text
+
+  Now you can save your markdown-style text in database, after all, you want to format it, display it, use the following javascript api.
+
+
+    MdeditorRails.start_format(container, '#{ j(raw text)}')
+
+  container is a jQuery object where you want to hold the formatted text.

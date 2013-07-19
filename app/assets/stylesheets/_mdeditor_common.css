@@ -36,8 +36,9 @@ dd {
 }
 
 /* restore default style in bootstrap, otherwise, it will apply the prettify.css */
-pre.prettyprint {
+pre.prettyprint, code {
     border: 1px solid rgba(0, 0, 0, 0.15);
+    font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
     padding: 9.5px;
     white-space: pre;
     word-break: normal;
@@ -60,7 +61,6 @@ h3 {
 }
 
 code, pre {
-  font-size: 0.91em;
   padding: 4px;
 }
 li code {
